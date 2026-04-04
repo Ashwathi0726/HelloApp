@@ -25,7 +25,7 @@ name = args[0];
 }
 System.out.println("Hello, "+ name + "!");
 }
-} */
+} 
 
 public class Helloapp {
     public static void main(String[] args) {
@@ -35,6 +35,28 @@ public class Helloapp {
                     
                 } else {
                     System.out.println("Hello, World!");
+        }
+    }
+}*/
+
+public class Helloapp {
+    public static void main(String[] args) {
+        if (args.length == 0) {
+            System.out.println("Hello, World!");
+        } else {
+            StringBuilder nameBuilder = new StringBuilder();
+            boolean first = true;
+
+            for (String name : args) { // Fixed: Added colon
+                if (!first) {
+                    nameBuilder.append(", ");
+                }
+                nameBuilder.append(name);
+                first = false; // Fixed: Added equals sign
+            }
+
+            // The result will look like: "Hello, Alice, Bob!"
+            System.out.println("Hello, " + nameBuilder.toString() + "!");
         }
     }
 }
